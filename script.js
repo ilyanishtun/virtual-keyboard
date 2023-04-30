@@ -21,22 +21,38 @@ function init() {
 
 init();
 
+function addToTextarea(value) {
+  const textarea = document.querySelector('#textarea');
+  textarea.value += value;
+}
+
+
 document.onkeypress = function (event) {
   console.log(event.code); // keyA
   console.log(event.keyCode); // 97
-  document.querySelectorAll('#keyboard .k-key').forEach(function (element) {
-    element.classList.remove('active');
-  });
   document.querySelector('#keyboard .k-key[data="' + event.keyCode + '"]').classList.add('active');
 }
 
+document.addEventListener('keyup', function(event) {
+  document.querySelectorAll('#keyboard .k-key').forEach(function (element) {
+    element.classList.remove('active');
+  });
+});
+
+
+
+
+
 document.querySelectorAll('#keyboard .k-key').forEach(function (element) {
-  element.onclick = function(event){
+  element.addEventListener('mousedown', function(event) {
     document.querySelectorAll('#keyboard .k-key').forEach(function (element) {
       element.classList.remove('active');
     });
-    let code = this.getAttribute('data');
     this.classList.add('active');
-    console.log(code);
-  }
+    const value = String.fromCharCode(this.getAttribute('data'));
+    addToTextarea(value);
+  });
+  element.addEventListener('mouseup', function(event) {
+    this.classList.remove('active');
+  });
 });
