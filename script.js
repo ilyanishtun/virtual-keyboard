@@ -8,6 +8,7 @@ const keyboard = [113, 119, 101, 114, 116, 121, 117, 105, 111, 112, 91, 93, 92, 
 //   console.log(keyboard);
 // }
 
+
 function init() {
   let out = '';
   for (let i = 0; i < keyboard.length; i++) {
@@ -26,22 +27,27 @@ function addToTextarea(value) {
   textarea.value += value;
 }
 
-
+// ввод с клавиатуры
 document.onkeypress = function (event) {
   console.log(event.code); // keyA
   console.log(event.keyCode); // 97
   document.querySelector('#keyboard .k-key[data="' + event.keyCode + '"]').classList.add('active');
 }
 
-document.addEventListener('keyup', function(event) {
+document.addEventListener('keyup', function(event) { // присвоение класса activ для клавиши
   document.querySelectorAll('#keyboard .k-key').forEach(function (element) {
     element.classList.remove('active');
   });
 });
 
+document.onkeypress = function (event) { // запись символов в текстареа
+  const value = String.fromCharCode(event.keyCode);
+  document.querySelector('#keyboard .k-key[data="' + event.keyCode + '"]').classList.add('active');
+  addToTextarea(value);
+}
 
 
-
+// ввод мышью
 
 document.querySelectorAll('#keyboard .k-key').forEach(function (element) {
   element.addEventListener('mousedown', function(event) {
