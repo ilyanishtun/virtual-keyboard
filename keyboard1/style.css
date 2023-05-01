@@ -1,22 +1,8 @@
-#keyboard {
-  display: block;
-  border: 2px solid #e3e3e3;
-  border-radius: 10px;
-  padding: 10px;
-  width: 900px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+.row {
+  display: flex;
 }
 
-#keyboard::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-
-.k-key {
+.key {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,17 +19,10 @@
   float: left;
 }
 
-
-.clearfix {
-  display: block;
-  clear: both;
+.key:hover {
+  background-color: #f39c12;
 }
 
-.active {
-  background: #f39c12;
-  border-color: #f39c12;
-  color: #fff;
-}
 
 #textarea {
   display: flex;
@@ -61,4 +40,10 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   background-color: #f9f9f9;
   resize: none;
+  }
+
+  .active {
+    background: #f39c12;
+    border-color: #f39c12;
+    color: #fff;
   }
