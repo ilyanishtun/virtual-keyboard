@@ -1,0 +1,64 @@
+#keyboard {
+  display: block;
+  border: 2px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 10px;
+  width: 900px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#keyboard::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.k-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  float: left;
+}
+
+
+.clearfix {
+  display: block;
+  clear: both;
+}
+
+.active {
+  background: #f39c12;
+  border-color: #f39c12;
+  color: #fff;
+}
+
+#textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #e3e3e3;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: #555;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  background-color: #f9f9f9;
+  resize: none;
+  }

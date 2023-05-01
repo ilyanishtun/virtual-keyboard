@@ -1,0 +1,101 @@
+/* Стили для клавиатуры */
+#keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1.5rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.key:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+.key.active {
+  background-color: #555;
+}
+
+/* Стили для textarea */
+#output {
+  height: 10rem;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  background-color: #f4f4f4;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  resize: none;
+}
+
+
+/* Style specific keys */
+.key[data-code="Backquote"],
+.key[data-code="Digit1"],
+.key[data-code="Digit2"],
+.key[data-code="Digit3"],
+.key[data-code="Digit4"],
+.key[data-code="Digit5"],
+.key[data-code="Digit6"],
+.key[data-code="Digit7"],
+.key[data-code="Digit8"],
+.key[data-code="Digit9"],
+.key[data-code="Digit0"],
+.key[data-code="Minus"],
+.key[data-code="Equal"],
+.key[data-code="BracketLeft"],
+.key[data-code="BracketRight"],
+.key[data-code="Backslash"] {
+  width: 60px;
+}
+
+.key[data-code="Tab"] {
+  width: 80px;
+}
+
+.key[data-code="CapsLock"] {
+  width: 100px;
+}
+
+.key[data-code="Enter"] {
+  width: 90px;
+}
+
+.key[data-code="ShiftLeft"],
+.key[data-code="ShiftRight"] {
+  width: 120px;
+}
+
+.key[data-code="ControlLeft"],
+.key[data-code="ControlRight"],
+.key[data-code="AltLeft"],
+.key[data-code="AltRight"] {
+  width: 50px;
+}
+
+.key[data-code="Space"] {
+  width: 250px;
+}
+
+.key[data-code="CapsLock"].active,
+.key[data-code="ShiftLeft"].active,
+.key[data-code="ShiftRight"].active {
+  background-color: #a5a5a5;
+}
